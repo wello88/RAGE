@@ -5,6 +5,7 @@ import { messages } from "../../utils/constant/messages.js";
 import { sendEmail } from "../../utils/email.js";
 import { hashPassword, comparePassword } from "../../utils/hashAndcompare.js";
 import { htmlTemplate, htmlTemplateOTP } from "../../utils/htmlTemplate.js";
+import { generateOTP } from "../../utils/otp.js";
 import { genrateToken } from "../../utils/token.js";
 
 export const signUp = async (req, res, next) => {
@@ -193,7 +194,7 @@ export const verifyOtp = async (req, res, next) => {
         user.otpAttempts = 0;
         await user.save();
 
-        await sendEmailForgetPassword({
+        await sendEmail({
             to: email,
             subject: 'New OTP',
             html: htmlTemplateOTP(newOtp)
