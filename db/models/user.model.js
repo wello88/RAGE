@@ -57,8 +57,28 @@ const userSchema= new Schema({
         enum:Object.values(status),
         default:status.PENDING
         },
-
+    isActive:{
+        type:Boolean,
+        default:false
+    }    
+  
+}, {
+  timestamps: true,
+  versionKey: false
 })
+// ✅ Hide password from JSON & Object responses
+userSchema.set('toJSON', {
+  transform: function (doc, ret) {
+    delete ret.password;
+    return ret;
+  }
+});
 
+userSchema.set('toObject', {
+  transform: function (doc, ret) {
+    delete ret.password;
+    return ret;
+  }
+});
 
 export const User = model("User",userSchema);
