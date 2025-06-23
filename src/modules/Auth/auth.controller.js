@@ -1,5 +1,6 @@
 import { User } from "../../../db/models/user.model.js";
 import { AppError } from "../../utils/appError.js";
+import { status } from "../../utils/constant/enums.js";
 import { messages } from "../../utils/constant/messages.js";
 import { sendEmail } from "../../utils/email.js";
 import { hashPassword, comparePassword } from "../../utils/hashAndcompare.js";
