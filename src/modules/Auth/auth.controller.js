@@ -30,7 +30,6 @@ export const signUp = async (req, res, next) => {
 
 
     const token = genrateToken({ payload: { email } });
-    console.log("Generated Token:", token);
      await sendEmail({
         to: email,
         subject: 'RAGE Email Verification',

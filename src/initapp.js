@@ -15,9 +15,11 @@ export const initApp = (app, express) => {
   app.use(express.static('public'));
   app.use(express.json());
   const port = process.env.PORT || 3000;
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
+  if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  }
   connectDB();
 
 
@@ -25,12 +27,12 @@ export const initApp = (app, express) => {
     try {
 
       const payload = verifyToken({ token: req.params.token });
-     
-      const result=  await User.findOneAndUpdate(
-        { email: payload.email } ,
+
+      const result = await User.findOneAndUpdate(
+        { email: payload.email },
         { status: status.VERIFIED }
       );
-      
+
       // Send the HTML verification success page instead of JSON
       res.status(200).send(verificationSuccessTemplate());
     } catch (err) {

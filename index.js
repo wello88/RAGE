@@ -5,8 +5,9 @@ import cors from 'cors';
 import { initApp } from './src/initapp.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import ServerlessHttp from 'serverless-http';
 
-
+dotenv.config();
 const app = express();
 app.use(cors())
 
@@ -33,8 +34,5 @@ app.get('/', (req, res) => {
 });
 
 initApp(app, express);
-
-export default (req, res) => {
-    // Handle requests with the Express app
-    app(req, res);
-}
+export const handler = ServerlessHttp(app);
+export default app;
