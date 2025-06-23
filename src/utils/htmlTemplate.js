@@ -465,147 +465,64 @@ export const htmlTemplateOTP = (otp) => {
   return `<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Email Confirmation</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-@media screen {
-  @font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v10/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
-  }
-  @font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v10/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
-  }
-}
-body,
-table,
-td,
-a {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-table,
-td {
-  mso-table-rspace: 0pt;
-  mso-table-lspace: 0pt;
-}
-img {
-  -ms-interpolation-mode: bicubic;
-}
-a[x-apple-data-detectors] {
-  font-family: inherit !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
-  line-height: inherit !important;
-  color: inherit !important;
-  text-decoration: none !important;
-}
-div[style*="margin: 16px 0;"] {
-  margin: 0 !important;
-}
-body {
-  width: 100% !important;
-  height: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background-color: #000000;
-}
-table {
-  border-collapse: collapse !important;
-}
-a {
-  color: #ffcc00;
-}
-img {
-  height: auto;
-  line-height: 100%;
-  text-decoration: none;
-  border: 0;
-  outline: none;
-}
-.otp-code {
-  font-size: 32px;
-  letter-spacing: 5px;
-  font-weight: bold;
-  color: #ffcc00;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>RAGE OTP Code</title>
 </head>
-<body>
+<body style="margin:0; padding:0; background-color:#000000; font-family:Arial, sans-serif;">
 
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-  <tr>
-    <td align="center">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-        <tr>
-          <td align="center" style="padding: 36px 24px;">
-            <img src="https://res.cloudinary.com/dizb3j2hj/image/upload/v1750703190/white_yellow_oi4lz1.png" alt="RAGE Logo" width="60" style="display: block;">
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#000000;">
+    <tr>
+      <td align="center">
 
-  <tr>
-    <td align="center">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-        <tr>
-          <td align="left" bgcolor="#1a1a1a" style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #ffcc00;">
-            <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px; color: #ffffff;">Your OTP Code</h1>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
+        <!-- Container -->
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#1a1a1a; border-top:3px solid #ffcc00; border-bottom:3px solid #ffcc00; padding:24px; color:#ffffff;">
+          
+          <!-- Logo -->
+          <tr>
+            <td align="center" style="padding: 20px 0;">
+              <img src="https://res.cloudinary.com/dizb3j2hj/image/upload/v1750703190/white_yellow_oi4lz1.png" alt="RAGE Logo" width="60" style="display:block;">
+            </td>
+          </tr>
 
-  <tr>
-    <td align="center">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-        <tr>
-          <td align="left" bgcolor="#1a1a1a" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color: #ffffff;">
-            <p>Here is your one-time password (OTP) code. Please use this code to complete your verification:</p>
-          </td>
-        </tr>
+          <!-- Title -->
+          <tr>
+            <td align="center" style="font-size:28px; font-weight:bold; color:#ffcc00; padding-bottom: 10px;">
+              Your OTP Code
+            </td>
+          </tr>
 
-        <tr>
-          <td align="center" bgcolor="#1a1a1a" style="padding: 24px;">
-            <div class="otp-code">${otp}</div>
-          </td>
-        </tr>
+          <!-- Message -->
+          <tr>
+            <td align="center" style="font-size:16px; color:#ffffff; padding: 10px 0;">
+              Use the following code to verify your identity. This code will expire after 15 minutes.
+            </td>
+          </tr>
 
-        <tr>
-          <td align="left" bgcolor="#1a1a1a" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color: #ffffff; border-bottom: 3px solid #ffcc00;">
-            <p>Best regards,<br>RAGE Support Team</p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
+          <!-- OTP Code -->
+          <tr>
+            <td align="center" style="font-size:32px; font-weight:bold; letter-spacing:6px; color:#ffcc00; padding: 20px 0;">
+              ${otp}
+            </td>
+          </tr>
 
-  <tr>
-    <td align="center" style="padding: 24px;">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-        <tr>
-          <td align="center" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #777;">
-            <p>You received this email because of a password reset or verification request. If you did not initiate this request, you can ignore this email.</p>
-          </td>
-        </tr>
-        <tr>
-          <td align="center" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #777;">
-            <p>Need help? Contact our support team at <a href="mailto:support@rage.com" style="color:#ffcc00;">support@rage.com</a></p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+          <!-- Footer -->
+          <tr>
+            <td align="center" style="font-size:14px; color:#cccccc; padding: 20px 0;">
+              If you didn't request this code, please ignore this email.
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="font-size:14px; color:#777;">
+              Need help? Contact us at <a href="mailto:support@rage.com" style="color:#ffcc00; text-decoration:none;">support@rage.com</a>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
 
 </body>
 </html>`;
