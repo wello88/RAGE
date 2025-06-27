@@ -1,7 +1,5 @@
 import { User } from "../../db/index.js";
 import { AppError } from "../utils/appError.js";
-import { statusEnum } from "../utils/constant/enums.js";
-import { messages } from "../utils/constant/messages.js";
 import { verifyToken } from "../utils/token.js";
 
 export const isAuthenticated = () => {
@@ -17,7 +15,7 @@ export const isAuthenticated = () => {
                 return next(new AppError('invalid payload', 401));
             }
 
-            const user = await User.findByPk(payload.id);
+            const user = await User.findById(payload.id);
             if (!user) {
                 return next(new AppError('User not found', 401));
             }

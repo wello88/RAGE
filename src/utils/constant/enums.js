@@ -1,5 +1,6 @@
 export const roles = {
     CUSTOMER: "customer",
+    COACH: "coach",
     ADMIN: "admin",
 }
 Object.freeze(roles)
@@ -13,6 +14,13 @@ export const status = {
 }
 Object.freeze(status)
 
+export const sessionType = {
+    PRIVATE: "private",
+    GROUP: "group",
+}
+Object.freeze(sessionType)
+
+
 
 export const CouponType = {
     FIXED: "fixed",
@@ -21,13 +29,7 @@ export const CouponType = {
 Object.freeze(CouponType)
 
 
-export const orderStatus = {
-    PLACED: "placed",
-    SHIPPED: "shipped",
-    DELIVERED: "delivered",
-    CANCELLED: "cancelled"
-}
-Object.freeze(orderStatus)
+
 
 
 export const payment = {
@@ -35,3 +37,9 @@ export const payment = {
     VISA: "visa",
 }
 Object.freeze(payment)
+
+export const gender = {
+    MALE: "male",
+    FEMALE: "female",
+}
+Object.freeze(gender)

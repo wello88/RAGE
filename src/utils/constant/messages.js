@@ -17,6 +17,7 @@ const genrateMessage = (entity)=>({
     addToWishlist:'added to wishlist successfully',
     invalidAmount:'invalid amount',
     outOfStock:'out of stock',
+    blocked:'your account is blocked',
 })
 export const messages = {
     user:genrateMessage('user'),
@@ -28,5 +29,7 @@ export const messages = {
     file:{required:'file is required'},
     review:genrateMessage('review'),
     order:genrateMessage('order'),
-    coupon:genrateMessage('coupon')
+    coupon:genrateMessage('coupon'),
+    coach:genrateMessage('coach'),
+    session:genrateMessage('session'),
 }

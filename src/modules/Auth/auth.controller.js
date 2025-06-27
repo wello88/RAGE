@@ -10,7 +10,7 @@ import { genrateToken } from "../../utils/token.js";
 
 export const signUp = async (req, res, next) => {
 
-    const { firstName, lastName, email, age, phone, weight, password } = req.body;
+    const { firstName, lastName, email, age, phone, weight,height,gender, password } = req.body;
 
     //check if user already exists
     const userExist = await User.findOne({ email })
@@ -27,7 +27,10 @@ export const signUp = async (req, res, next) => {
         age,
         phone,
         weight,
-        password: Hashedpassword
+        height,
+        gender,
+        password: Hashedpassword,
+        
     });
 
 
