@@ -6,7 +6,7 @@ export const signupSchema = joi.object({
     lastName: joi.string().min(2).max(50).required(),
     email: joi.string().email().required(),
     age: joi.number().integer().min(0).required(),
-    phone: joi.string().pattern(/^[0-9]{10}$/).required(),
+    phone: joi.string().pattern(/^(01)[0-2,5][0-9]{8}$/).required(),
     weight: joi.number().min(29).required(),
     height: joi.number().min(50).required(),
     gender: joi.string().valid(gender.MALE, gender.FEMALE).required(),
